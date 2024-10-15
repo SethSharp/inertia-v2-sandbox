@@ -25,6 +25,9 @@ Route::get('/defer', \App\Http\Controllers\Defer\ShowDeferredPropsController::cl
 
 Route::get('/when-visible', \App\Http\Controllers\WhenVisible\ShowWhenVisibleController::class)->middleware(['auth', 'verified'])->name('when-visible');
 
+Route::get('/infinite-scrolling', \App\Http\Controllers\InfiniteScrolling\ShowInfiniteScrollingController::class)->middleware(['auth', 'verified'])->name('infinite-scrolling');
+
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

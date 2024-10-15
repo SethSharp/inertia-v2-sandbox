@@ -34,8 +34,13 @@ const links = [
     },
     {
         href: route('when-visible'),
-        name: 'WhenVisible',
+        name: 'When Visible',
         active: route().current('when-visible'),
+    },
+    {
+        href: route('infinite-scrolling'),
+        name: 'Infinite Scrolling',
+        active: route().current('infinite-scrolling'),
     },
 ]
 </script>
