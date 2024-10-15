@@ -2,15 +2,10 @@
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue'
 import { User } from '@/types'
 import { Head, WhenVisible } from '@inertiajs/vue3'
-import { onUpdated } from 'vue'
 
-const props = defineProps<{
+defineProps<{
     users: User[]
 }>()
-
-onUpdated(() => {
-    console.log(props.users)
-})
 </script>
 
 <template>
@@ -31,14 +26,22 @@ onUpdated(() => {
             <div
                 class="mx-auto max-w-7xl text-black sm:px-6 lg:px-8 dark:text-white"
             >
-                <div v-for="(user, index) in users" class="my-4 h-40 w-full">
-                    <h4 class="text-2xl">{{ index + 1 }} - {{ user.name }}</h4>
+                <div class="h-[1000px] bg-red-200 w-full">
+                    Here there is some other page content
                 </div>
 
-                <WhenVisible data="users">
+                <div class="h-[500px] bg-orange-200">
+                    Starting to fetch...
+                </div>
+
+                <WhenVisible data="users" :buffer="500">
                     <template #fallback>
                         <div class="animate-pulse">Loading</div>
                     </template>
+
+                    <div v-for="(user, index) in users" :key="index" class="my-4 h-56 w-full">
+                        <h4 class="text-2xl">{{ index + 1 }} - {{ user.name }}</h4>
+                    </div>
                 </WhenVisible>
             </div>
         </div>

@@ -23,7 +23,7 @@ Route::get('/pre-fetching/users', \App\Http\Controllers\PreFetch\ShowPreFetchedU
 
 Route::get('/defer', \App\Http\Controllers\Defer\ShowDeferredPropsController::class)->middleware(['auth', 'verified'])->name('defer');
 
-Route::get('/infinite-scrolling', \App\Http\Controllers\InfiniteScrolling\ShowInfiniteScrollingController::class)->middleware(['auth', 'verified'])->name('infinite-scrolling');
+Route::get('/when-visible', \App\Http\Controllers\WhenVisible\ShowWhenVisibleController::class)->middleware(['auth', 'verified'])->name('when-visible');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
