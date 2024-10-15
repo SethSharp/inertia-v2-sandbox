@@ -16,8 +16,8 @@ defineProps<{
             <h2
                 class="text-xl font-semibold leading-tight text-gray-800 dark:text-gray-200"
             >
-                <a target="blank" href="https://v2.inertiajs.com/merging-props">
-                    Infinite Scrolling + WhenVisible
+                <a target="blank" href="https://v2.inertiajs.com/load-when-visible">
+                    WhenVisible
                 </a>
             </h2>
         </template>
